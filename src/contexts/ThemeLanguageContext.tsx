@@ -21,6 +21,9 @@ const translations = {
     english: "English",
     portuguese: "Portuguese",
     progress: "complete",
+    beginner: "Beginner",
+    intermediate: "Intermediate",
+    advanced: "Advanced"
   },
   pt: {
     songs: "Músicas",
@@ -30,6 +33,9 @@ const translations = {
     english: "Inglês",
     portuguese: "Português",
     progress: "completo",
+    beginner: "Iniciante",
+    intermediate: "Intermediário",
+    advanced: "Avançado"
   }
 };
 

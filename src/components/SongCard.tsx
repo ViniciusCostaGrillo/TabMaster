@@ -1,6 +1,7 @@
 
 import React from "react";
 import ProgressBar from "./ProgressBar";
+import { useThemeLanguage } from "../contexts/ThemeLanguageContext";
 
 interface SongCardProps {
   id: string;
@@ -20,6 +21,7 @@ const SongCard = ({
   imageUrl = "/placeholder.svg", 
   onClick 
 }: SongCardProps) => {
+  const { t } = useThemeLanguage();
   
   const difficultyColors = {
     beginner: "bg-green-100 text-green-800 border-green-200",
@@ -49,7 +51,7 @@ const SongCard = ({
           </div>
           
           <span className={`text-xs px-2 py-1 rounded-full border ${difficultyColors[difficulty]}`}>
-            {difficulty.charAt(0).toUpperCase() + difficulty.slice(1)}
+            {t(difficulty)}
           </span>
         </div>
         

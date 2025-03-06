@@ -10,6 +10,8 @@ import SongDetailPage from "./pages/SongDetailPage";
 import Layout from "./components/Layout";
 import NotFound from "./pages/NotFound";
 import { ThemeLanguageProvider } from "./contexts/ThemeLanguageContext";
+import React from 'react';
+import Tuner from '../components/Tuner'; // Importe o componente Tuner
 
 const queryClient = new QueryClient();
 

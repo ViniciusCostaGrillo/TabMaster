@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from "react";
 import { NavLink, useLocation } from "react-router-dom";
-import { Music, BookMusic } from "lucide-react";
+import { Music, BookOpen } from "lucide-react";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -56,7 +56,7 @@ const Navbar = () => {
                 }`
               }
             >
-              <BookMusic size={18} />
+              <BookOpen size={18} />
               <span className="hidden sm:inline">Theory</span>
             </NavLink>
           </nav>

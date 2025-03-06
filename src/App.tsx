@@ -8,29 +8,32 @@ import Index from "./pages/Index";
 import TheoryPage from "./pages/TheoryPage";
 import Layout from "./components/Layout";
 import NotFound from "./pages/NotFound";
+import { ThemeLanguageProvider } from "./contexts/ThemeLanguageContext";
 
 const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route 
-            path="/theory" 
-            element={
-              <Layout>
-                <TheoryPage />
-              </Layout>
-            } 
-          />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
+      <ThemeLanguageProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route 
+              path="/theory" 
+              element={
+                <Layout>
+                  <TheoryPage />
+                </Layout>
+              } 
+            />
+            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </BrowserRouter>
+      </ThemeLanguageProvider>
     </TooltipProvider>
   </QueryClientProvider>
 );

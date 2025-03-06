@@ -1,5 +1,6 @@
 
 import React from "react";
+import { useThemeLanguage } from "../contexts/ThemeLanguageContext";
 
 interface ProgressBarProps {
   progress: number; // 0-100
@@ -10,6 +11,7 @@ interface ProgressBarProps {
 const ProgressBar = ({ progress, size = "md", showLabel = true }: ProgressBarProps) => {
   // Ensure progress is between 0-100
   const validProgress = Math.min(100, Math.max(0, progress));
+  const { theme, t } = useThemeLanguage();
   
   // Define height based on size
   const heights = {
@@ -20,7 +22,7 @@ const ProgressBar = ({ progress, size = "md", showLabel = true }: ProgressBarPro
   
   return (
     <div className="w-full">
-      <div className="w-full bg-guitar-200 rounded-full overflow-hidden">
+      <div className={`w-full ${theme === "dark" ? "bg-guitar-700" : "bg-guitar-200"} rounded-full overflow-hidden`}>
         <div 
           className={`bg-guitar-accent transition-all duration-500 ease-out rounded-full ${heights[size]}`}
           style={{ width: `${validProgress}%` }}
@@ -28,8 +30,8 @@ const ProgressBar = ({ progress, size = "md", showLabel = true }: ProgressBarPro
       </div>
       
       {showLabel && (
-        <div className="mt-1 text-xs text-guitar-500 text-right">
-          {validProgress}% complete
+        <div className={`mt-1 text-xs ${theme === "dark" ? "text-guitar-300" : "text-guitar-500"} text-right`}>
+          {validProgress}% {t("progress")}
         </div>
       )}
     </div>

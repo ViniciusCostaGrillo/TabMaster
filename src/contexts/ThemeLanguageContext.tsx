@@ -1,4 +1,3 @@
-
 import React, { createContext, useContext, useState, useEffect } from "react";
 
 type ThemeType = "light" | "dark";
@@ -23,7 +22,19 @@ const translations = {
     progress: "complete",
     beginner: "Beginner",
     intermediate: "Intermediate",
-    advanced: "Advanced"
+    advanced: "Advanced",
+    backToSongs: "Back to Songs",
+    songNotFound: "Song not found",
+    editSong: "Edit Song",
+    deleteSong: "Delete Song",
+    viewTabs: "View Tabs",
+    download: "Download",
+    sections: "Sections",
+    sectionIntro: "Intro",
+    sectionVerse: "Verse",
+    sectionChorus: "Chorus",
+    sectionBridge: "Bridge",
+    sectionOutro: "Outro"
   },
   pt: {
     songs: "Músicas",
@@ -35,7 +46,19 @@ const translations = {
     progress: "completo",
     beginner: "Iniciante",
     intermediate: "Intermediário",
-    advanced: "Avançado"
+    advanced: "Avançado",
+    backToSongs: "Voltar para Músicas",
+    songNotFound: "Música não encontrada",
+    editSong: "Editar Música",
+    deleteSong: "Excluir Música",
+    viewTabs: "Ver Tablaturas",
+    download: "Baixar",
+    sections: "Seções",
+    sectionIntro: "Introdução",
+    sectionVerse: "Verso",
+    sectionChorus: "Refrão",
+    sectionBridge: "Ponte",
+    sectionOutro: "Final"
   }
 };
 

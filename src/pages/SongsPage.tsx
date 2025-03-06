@@ -1,9 +1,10 @@
 
 import React from "react";
 import SongCard from "../components/SongCard";
+import { useNavigate } from "react-router-dom";
 
 // Mock data for songs
-const songsMockData = [
+export const songsMockData = [
   {
     id: "1",
     title: "Stairway to Heaven",
@@ -55,6 +56,8 @@ const songsMockData = [
 ];
 
 const SongsPage = () => {
+  const navigate = useNavigate();
+
   return (
     <div>
       <div className="mb-8">
@@ -72,7 +75,7 @@ const SongsPage = () => {
             difficulty={song.difficulty}
             progress={song.progress}
             imageUrl={song.imageUrl}
-            onClick={() => console.log(`Clicked on song: ${song.title}`)}
+            onClick={() => navigate(`/song/${song.id}`)}
           />
         ))}
       </div>

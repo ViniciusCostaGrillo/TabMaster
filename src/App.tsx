@@ -6,6 +6,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import TheoryPage from "./pages/TheoryPage";
+import SongDetailPage from "./pages/SongDetailPage";
 import Layout from "./components/Layout";
 import NotFound from "./pages/NotFound";
 import { ThemeLanguageProvider } from "./contexts/ThemeLanguageContext";
@@ -21,6 +22,7 @@ const App = () => (
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Index />} />
+            <Route path="/song/:id" element={<SongDetailPage />} />
             <Route 
               path="/theory" 
               element={
